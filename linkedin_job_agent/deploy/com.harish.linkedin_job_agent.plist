@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Service Identifier -->
+    <key>Label</key>
+    <string>com.harish.linkedin_job_agent</string>
+
+    <!-- Execution Command -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/harishghadage/Python Automation/venv/bin/python</string>
+        <string>/Users/harishghadage/Python Automation/linkedin_job_agent/main.py</string>
+        <string>run-once</string>
+    </array>
+
+    <!-- Working Directory -->
+    <key>WorkingDirectory</key>
+    <string>/Users/harishghadage/Python Automation</string>
+
+    <!-- Run immediately when loaded and on user login -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- Recurring schedule: Every 1 hour (3600 seconds) -->
+    <key>StartInterval</key>
+    <integer>3600</integer>
+
+    <!-- Standard Logging Paths -->
+    <key>StandardOutPath</key>
+    <string>/Users/harishghadage/Python Automation/linkedin_job_agent/logs/launchd_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/harishghadage/Python Automation/linkedin_job_agent/logs/launchd_stderr.log</string>
+
+    <!-- Process Environment -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PYTHONUNBUFFERED</key>
+        <string>1</string>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+
+    <key>AbandonProcessGroup</key>
+    <true/>
+</dict>
+</plist>

@@ -1,0 +1,65 @@
+agent:
+  name: "LinkedIn Job Application Automation Agent"
+  version: "1.0.0"
+  search_frequency_hours: 1
+  search_interval_seconds: 3600
+  application_mode: "auto_submit" # Options: auto_submit, manual_approval_only
+  minimum_match_score: 95.0
+  high_priority_threshold: 95.0
+  good_match_threshold: 85.0
+  rejection_threshold: 70.0
+  max_applications_per_hour: 5
+  max_applications_per_day: 25
+  emergency_stop: false
+
+target_roles:
+  - "Data Engineer"
+  - "ETL Developer"
+  - "Data Analyst"
+  - "PySpark Developer"
+  - "Python Developer – Data Engineering"
+  - "BI Developer / BI Data Engineer"
+
+target_locations:
+  - "Navi Mumbai, Maharashtra, India"
+  - "Pune, Maharashtra, India"
+  - "Mumbai, Maharashtra, India"
+
+experience_filter:
+  min_years: 1.0
+  max_years: 5.5
+  preferred_years: 3.2
+
+matching_weights:
+  technical_skills: 0.40
+  experience_years: 0.20
+  responsibilities: 0.15
+  database_programming: 0.10
+  location: 0.10
+  industry_domain: 0.05
+
+storage:
+  database_path: "linkedin_job_agent/data/jobs.db"
+  candidate_profile_path: "linkedin_job_agent/data/candidate_profile.json"
+  resume_path: "linkedin_job_agent/resumes/harish_ghadage_resume.txt"
+  session_storage_path: "linkedin_job_agent/data/session.enc"
+
+auth:
+  session_cookie_name: "li_at"
+  jsession_cookie_name: "JSESSIONID"
+  interactive_login: false
+  headless_browser: true
+  dashboard_username: "harish"
+  dashboard_password: "Harish@2026"
+
+notifications:
+  console_summary: true
+  system_desktop: true
+  webhook_enabled: false
+  webhook_url: ""
+  email_enabled: false
+  smtp_server: ""
+  smtp_port: 587
+  smtp_username: ""
+  smtp_password: ""
+  recipient_email: ""

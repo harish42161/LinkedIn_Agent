@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # 1. Hourly Background Automation Scheduler
+  linkedin-scheduler:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: linkedin_job_scheduler
+    restart: unless-stopped
+    command: ["python", "linkedin_job_agent/main.py", "schedule"]
+    env_file:
+      - ../.env
+    volumes:
+      - ../data:/app/linkedin_job_agent/data
+      - ../logs:/app/linkedin_job_agent/logs
+      - ../resumes:/app/linkedin_job_agent/resumes
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  # 2. Streamlit Web Monitoring & Control Dashboard
+  linkedin-dashboard:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    container_name: linkedin_job_dashboard
+    restart: unless-stopped
+    command: ["python", "linkedin_job_agent/main.py", "dashboard", "--port", "8501"]
+    ports:
+      - "8501:8501"
+    env_file:
+      - ../.env
+    volumes:
+      - ../data:/app/linkedin_job_agent/data
+      - ../logs:/app/linkedin_job_agent/logs
+      - ../resumes:/app/linkedin_job_agent/resumes
+    environment:
+      - PYTHONUNBUFFERED=1

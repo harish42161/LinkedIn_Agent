@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: linkedin-job-agent
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run linkedin_job_agent/dashboard.py --server.port $PORT --server.address 0.0.0.0
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: APPLICATION_MODE
+        value: auto_submit
+      - key: MINIMUM_MATCH_SCORE
+        value: "85.0"
+      - key: PYTHON_VERSION
+        value: 3.11.9

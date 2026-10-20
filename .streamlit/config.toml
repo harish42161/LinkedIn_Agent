@@ -1,0 +1,25 @@
+[server]
+# Security: Disable file watcher in production to prevent directory traversal
+fileWatcherType = "none"
+# Never collect telemetry
+enableCORS = false
+enableXsrfProtection = true
+maxUploadSize = 5
+# Enforce HTTPS headers
+headless = true
+
+[browser]
+# Disable usage statistics collection
+gatherUsageStats = false
+serverAddress = "0.0.0.0"
+
+[theme]
+primaryColor = "#0077B5"
+backgroundColor = "#0A0E1A"
+secondaryBackgroundColor = "#111827"
+textColor = "#F1F5F9"
+font = "sans serif"
+
+[logger]
+level = "warning"
+messageFormat = "%(asctime)s %(levelname)s %(message)s"

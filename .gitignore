@@ -1,0 +1,62 @@
+# ============================================================
+# .gitignore — LinkedIn Job Agent
+# NEVER commit secrets, cookies, databases, or credentials
+# ============================================================
+
+# ── Secrets & Credentials (CRITICAL) ─────────────────────────────────────────
+.env
+.env.*
+!.env.example           # Keep the example template
+secrets.toml
+.streamlit/secrets.toml # Streamlit Cloud secrets (add via dashboard only)
+
+# ── Database & Encrypted Files ────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+*.enc                   # Encrypted session tokens (e.g., session.enc)
+data/jobs.db
+linkedin_job_agent/data/jobs.db
+
+# ── Resumes (Personal PII) ────────────────────────────────────────────────────
+resumes/
+linkedin_job_agent/resumes/
+
+# ── Candidate Profile (PII) ───────────────────────────────────────────────────
+data/candidate_profile.json
+linkedin_job_agent/data/candidate_profile.json
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── OS & IDE ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
