@@ -6,7 +6,7 @@
 
 Your agent dashboard is already **live on the internet right now** with global Cloudflare edge encryption:
 
-🔗 **Public Live URL:** [https://wishes-eco-bands-bingo.trycloudflare.com](https://wishes-eco-bands-bingo.trycloudflare.com)
+🔗 **Public Live URL:** [https://larger-applying-articles-pal.trycloudflare.com](https://larger-applying-articles-pal.trycloudflare.com)
 
 - **Cost:** 100% Free
 - **SSL / HTTPS:** Included automatically
